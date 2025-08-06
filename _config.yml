@@ -25,7 +25,7 @@ author:
   avatar           : "profile.png"
   name             : "Jeongmin Park"
   pronouns         : # example: "she/her"  
-  bio              : "I am a PhD student in the Department of Computer Science at the Seoul National University."
+  bio              : "I am a undergraduate student in the Department of Computer Science at the Seoul National University."
   employer         : "Seoul National University"
   uri              : # URL
   email            : "james1990a@snu.ac.kr" 
@@ -90,7 +90,7 @@ publication_category:
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
-future                   : true
+future                   : false
 read_more                : "disabled" # if enabled, adds "Read more" links to excerpts
 talkmap_link             : false      #change to true to add link to talkmap on talks page
 comments:
