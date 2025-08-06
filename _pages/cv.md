@@ -11,11 +11,11 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* B.S. in Computer Science & Engineering, Seoul National University, 2021 - 2027 (Expected)
+  - Double Major in Business
+  <!-- - Total GPA of 3.88 / 4.3, Major GPA of 3.91 / 4.3 (Credits taken: 86) -->
 
-Work experience
+<!-- Work Experience
 ======
 * Spring 2024: Academic Pages Collaborator
   * GitHub University
@@ -30,34 +30,48 @@ Work experience
 * Summer 2015: Research Assistant
   * GitHub University
   * Duties included: Tagging issues
-  * Supervisor: Professor Git
+  * Supervisor: Professor Git -->
+
+Teaching Experience
+======
+- Summer 2025: 2025 FastMRI Challenge
+  - MRI reconstruction with data from brain and knee
+  - Explored a novel approach by incorporating knee data into the reconstruction process.
+
+- Spring/Fall 2024: Class of 'Basic Computing: First Adventures in Computing'
+  - Answered to students’ questions for basic of web crawling, data analysis & visualization using Python
+
+Awards & Honors
+======
+- 2025.01, Academic Scholarship, Woonhae Fondation Scholarship
+  - Awarded $2,800 for each semester
+- 2025.01, Academic Scholarship, STX Fondation Scholarship
+  - Awarded $2,100 for tuition each semester and a monthly stipend of $360
+- 2024.09, 4th place, SNU FastMRI Challenge, SNU
+  - MRI reconstruction with data from different acceleration modes
+
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Programming: C/C++, Python
 
-Publications
+<!-- Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Talks
+<!-- Talks
 ======
   <ul>{% for post in site.talks reversed %}
     {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
-Teaching
+<!-- Teaching
 ======
   <ul>{% for post in site.teaching reversed %}
     {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+  {% endfor %}</ul> -->
   
 Service and leadership
 ======
