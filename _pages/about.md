@@ -8,6 +8,6 @@ redirect_from:
 ---
 
 Hello,
-My name is Jeongmin Park, and I am an undergraduate student at Seoul National University, majoring in Computer Science and Engineering (Class of 2021) with a double major in Business Administration.
+My name is Jeongmin Park, and I am an undergraduate student at Seoul National University, majoring in Computer Science and Engineering (Class of 2021)
 
 I am particularly interested in AI and deep learning, and I am developing both theoretical knowledge and practical skills through various projects and coursework.
