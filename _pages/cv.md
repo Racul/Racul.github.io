@@ -11,7 +11,7 @@ redirect_from:
 
 Education
 ======
-* B.S. in Computer Science & Engineering, Seoul National University, 2021 - 2027 (Expected)
+* Undergraduate student in Computer Science & Engineering, Seoul National University, 2021 - 2027 (Expected)
   - Double Major in Business
   <!-- - Total GPA of 3.88 / 4.3, Major GPA of 3.91 / 4.3 (Credits taken: 86) -->
 
@@ -31,6 +31,8 @@ Education
   * GitHub University
   * Duties included: Tagging issues
   * Supervisor: Professor Git -->
+
+Project 
 
 Teaching Experience
 ======
