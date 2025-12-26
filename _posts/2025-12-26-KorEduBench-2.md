@@ -3,7 +3,8 @@ title: '성취기준 코드 분류 벤치마크 KorEduBench 제작기'
 date: 2025-12-26
 permalink: /posts/2025/12/KorEduBench/
 tags:
-  - Project
+  - My Project Review
+  - LLM Project
 ---
 
 # Motivation 
