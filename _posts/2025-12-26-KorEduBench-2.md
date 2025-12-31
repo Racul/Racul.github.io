@@ -45,7 +45,7 @@ KorEduBench는 황승원 교수님의 "자연언어처리 개론" 강의의 과�
 
 1. How well LLMs classify texts without fine-tuning?
 2. Does few-shot prompting  significantly improve performance?
-3. Does increasing model size lead to better performance?
+3. How much does accuracy change with increasing model size?
 4. Can smaller, fine-tuned models achieve similar results efficiently?
 
 전국의 학생들이 모두가 혜택을 받는 LLM이라면 요청 횟수는 상당히 많을 것입니다. 이러한 비용을 국가에서 감당하기 위해선, 작은 모델에서 교육 도메인에 대한 fine-tuning을 했을때 효율이 높아야 한다고 생각했습니다.
@@ -91,4 +91,66 @@ RoBERTa를 raw text가 아닌, 특정 LLM의 답변을 기준으로 학습시킬
 
 ## Experiments Result
 
-추후 작성
+### 1. How accurate are LLMs in classifying texts by subject?
+
+<figure>
+  <img src="/images/KorEduBench_Q1.png" alt="KorEduBench Q1 Results">
+  <figcaption>그림 3. 과목별 분류 정확도</figcaption>
+</figure>
+
+과학, 수학에서 높은 성적을 보이고, 영어에서 약한 모습을 보였습니다.
+
+과학이나 수학에서 높은 성적을 보인 것은, pretrain에 수과학 내용이 많은 것과, 해당 과목의 교재 텍스트가 분류가 쉽게 특징이 잘 나타나서 일 것으로 생각하였습니다.
+
+그에 반해, 영어는 교재 텍스트 자체가 특징이 크게 나타나지 않았고, 학습목표도 명확하게 분리되지 않았습니다.
+
+추가적인 에러 분석을 위해 input으로 들어간 텍스트와, LLM이 예측한 학습목표간의 cos-sim을 확인하였습니다.
+그 결과 예상대로 영어과목 오답의 cos-sim이 매우 높은 것을 확인할 수 있었습니다. 비록 오답이긴 하지만, 정답과 유사한 답변을 LLM이 제출했다는 것으로 해석할 수 있고, 실제로 직접 샘플링하여 제가 확인했을 때도 그러한 경향이 느껴졌습니다.
+
+### 2. Does few-shot learning improve accuracy?
+
+<figure>
+  <img src="/images/KorEduBench_Q2.png" alt="KorEduBench Q2 Results">
+  <figcaption>그림 4. Few-shot learning 성능 비교</figcaption>
+</figure>
+
+Qwen에서는 0-shot 에서 3-shot 까지 올릴때 정확도 향상이 있었으나, Llama는 오히려 감소하는 경향을 보였습니다. 그리고, Qwen에서 보인 정확도 향상 역시 그다지 큰 폭이 아니었기에 다른 부분에서 향상이 없었는지 추가 분석을 진행하였습니다.
+
+추가 분석 결과, few-shot은 정확도의 향상보다는, "존재하지 않는 invalid 학습목표 코드"를 제출하는 케이스의 감소에 큰 영향을 주었습니다. 그렇다면, few-shot은 추가적인 fine-tuning과 같이 사용한다면 시너지가 생길 것을 기대하였습니다. (검증은 진행하지 못하였습니다)
+
+### 3. How much does accuracy change with increasing model size?
+
+<figure>
+  <img src="/images/KorEduBench_Q3.png" alt="KorEduBench Q3 Results">
+  <figcaption>그림 5. 모델 크기에 따른 정확도 변화</figcaption>
+</figure>
+
+8B에서 80B 가량으로 모델 크기를 늘리며 정확도가 30\% 정도에서 48\% 정도까지 상승함을 확인했습니다. 
+비용이 커지긴 하지만, 모델 사이즈를 키우는 것이 가장 효과적이었습니다.
+
+### 4. Can small fine-tuned models match large few-shot LLMs?
+
+Fine tuning을 하면 7B의 모델로 70B 모델이나 GPT-4.1-mini 이상의 정확도까지 끌어올릴 수 있었습니다. (4번의 실험을 제외하면 모두 FT 하지 않은 모델로 실험을 진행하였습니다)
+
+그러나 세부적으로 분석해보니, FT 모델은 다른 큰 사이즈의 모델에 비해 invalid (존재하지 않는 코드) 답변이 많았음을 확인할 수 있었습니다. 모델 사이즈를 늘리는 대신 FT를 중점적으로 사용하는 것은 Robustness 를 낮출 수 있다는 trade-off를 확인할 수 있었습니다. 
+
+
+# Conclusion
+
+피드백을 받을 시간이 없었던 관계로, 저희가 발견하지 못한 여러 부족한 점이 있었을 것이라 생각합니다.
+아무래도 개인 컴퓨터와, 사비로 api를 구매해 사용하며 사용한 모델이 지나치게 성능이 낮았을 수 있다는 문제점도 있었습니다.
+데이터셋도 그리 좋은 품질이 아니었다는 점이 한계로 작용했을 것 같습니다
+
+그럼에도 다음과 같은 결론을 내려볼 수 있었습니다.
+
+1. Can AI be used in education alignment? \
+수학과 과학에서는 꽤나 높은 성능을 보였습니다. 그러나 아직 80B 정도의 모델로는 실업에서 곧바로 사용하기에 부족할 수 있으며, 많은 추가적인 fine-tuning 과정이 필요할 것으로 생각합니다. 특히, 다른 과목에서 사용할 때는 더욱 주의해야할 것입니다.
+
+2. What needs to improve for reliable classroom use? \
+분류가 모호한 텍스트에 대한 처리를 고민해야할 것이고, 거의 구분이 어려운 교육목표들에 대해서는 어느정도 그룹으로 묶어서 처리할 수 있도록 해야하지 않을까 생각하였습니다.
+
+3. How can we evaluate future models for educational use? \
+우리의 벤치마크가 공교육의 LLM의 성능 측정에 유용하게 사용할 수 있지 않을까 생각합니다.
+
+
+많이 헤메고, 다시 새로 작업하기도 하며 많은 시행착오가 있었습니다. 그렇지만 팀원들 모두 자기 역할을 잘 해내주고, 결국 2개월의 과정속에서 나름 의미있는 결론을 내며 (결론이 안 나는게 제일 무서웠습니다다) 마무리를 지을 수 있었던듯 하여 보람찬 프로젝트였습니다. 
