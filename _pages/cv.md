@@ -13,7 +13,7 @@ Education
 ======
 * Undergraduate student in Computer Science & Engineering, Seoul National University, 2021 - 2027 (Expected)
   - Double Major in Business Administration
-  - GPA: 3.88 / 4.3, Major GPA: 3.91 / 4.3
+  - GPA: 3.84 / 4.3, Major GPA: 3.92 / 4.3
 
 Research Interests
 ======
