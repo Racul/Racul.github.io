@@ -25,6 +25,7 @@ layout: resume
 2025.10 - 2025.12
 
 <div class="project-links">
+<a href="https://github.com/jsh6269/KorEduBench">📎 Github</a>
 <a href="/posts/2025/12/KorEduBench/">📎 Post</a>
 </div>
 
