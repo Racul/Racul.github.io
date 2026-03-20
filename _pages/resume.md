@@ -95,7 +95,7 @@ layout: resume
 
 ### 2025 [SNU FastMRI Challenge](https://fastmri.snu.ac.kr/) 총괄 조교
 2025.05 - 2025.09
-- 대회 규정 설정 및 280여명의 참가자 관리
+- [대회 규정 설정](https://www.youtube.com/watch?v=1hBbyZyl-OM&list=PLZjIfJn3RN8v_wKX3NiXxCi65eT7xWV6K&index=9) 및 280여명의 참가자 관리
 - [Vessl AI](https://vessl.ai/ko) 및 공과대학 정보화지원실과 협업하여 k8s 기반 GPU 컨테이너 관리
 - 기존 brain image dataset에 knee image를 추가하여 대회 주제의 범용성을 높임
 - 새로운 dataset을 위한 데이터 전처리, 학습 baseline 코드 작성
@@ -105,7 +105,7 @@ layout: resume
 ### 서울대학교 Holi Lab 학부연구인턴
 2025.08 - 2026.03
 - 서울대학교 조요한 교수 지도하에 학부연구인턴으로 활동
-- SLM Agent 연구를 수행하며 AI Agent의 벤치마크와 시스템에 대한 이해를 심화 [논문리뷰](https://racul.github.io/posts/2026/02/LST/)
+- SLM Agent 연구를 수행하며 AI Agent의 벤치마크와 시스템에 대한 이해를 심화 ([논문리뷰](https://racul.github.io/posts/2026/02/LST/))
 
 ### '컴퓨팅 기초' 학부생 조교
 2024.03 - 2024.06, 2024.09 - 2024.12

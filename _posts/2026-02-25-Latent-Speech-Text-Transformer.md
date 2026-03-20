@@ -8,9 +8,9 @@ tags:
 
 # Motivation
 
-HOLI Lab에서 음성모델과 관련된 연구에 참여하고 있습니다.
-연구에서 만드는 모델은 Text와 Speech를 동시에 생성할 수 있습니다.
-저희의 기대로는 해당 모델이 생성하는 Text와 Speech가 정확히 일치해야하지만, 그렇지 않았습니다.
+HOLI Lab에서 음성모델과 관련된 연구에 참여하고 있습니다. \\
+연구에서는 Text와 Speech를 동시에 생성하는 end-to-end 모델을 생성하였습니다. \\
+저희의 기대로는 해당 모델이 생성하는 Text와 Speech의 내용이 정확히 일치해야 하지만, 그렇지 않았습니다.
 
 관련하여 다른 Speech-Text Transformer는 어떤 방식으로 학습을 하였는지 살펴보던 중, ICLR 2026 Oral을 받은 이 논문을 확인하여 정리해보게 되었습니다.
 
@@ -134,6 +134,12 @@ TTS에서는 품질이 크게 나빠지지 않으면서 generation length가 줄
 ## Patching 분석
 
 patching 전략별 ablation에서도 aligned patching이 static보다 대체로 더 낫고, curriculum이 가장 강한 결과를 보입니다. 다만 논문은 이러한 차이가 왜 나타났는지에 대해 충분히 깊은 해석을 제시하지는 않았기에, aligned patching과 static patching의 차이에 대해 더 심도있는 분석을 진행하고, 그것을 통해 왜 aligned patching을 먼저 수행하고 나중에 static patching을 진행했는지, 반대의 순서라던가, aligned-static-aligned 와 같은 다른 구조의 구성이 더 유리하지는 않았을지 고찰을 할 수 있으면 좋겠다고 생각하였습니다.
+
+# 연구와의 접점
+ 
+위 논문의 patch 전략을 직접적으로 이용하는 것은 모델의 구조를 지나치게 복잡하게 만들어 해석을 어렵게 할 것으로 보입니다. \\
+그러나 speech에 사용하는 token의 단순화, interleaved speech-text data의 사용은 충분히 연구에서 시도해볼법한 방향으로 보입니다. \\
+interleaved speech-text data의 사용은 Spirit-LM 뿐만 아니라, 비슷한 시기에 게시된 논문인 [Scaling Speech-Text Pre-training with Synthetic Interleaved Data](https://openreview.net/forum?id=3tukjsVyrE)에서도 소개된 방식으로, 해당 논문 역시 ICLR 2025에 Accept(Poster)되기도 한 만큼 차용가치는 높은 것으로 보입니다.
 
 # 정리
 
