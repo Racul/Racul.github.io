@@ -36,7 +36,7 @@ layout: resume
 **[진행 사항]**
 - AI Hub 교과 데이터를 정제하며 **오라벨과 클래스 불균형 문제**를 점검하고 벤치마크 데이터셋 구성
 - **RoBERTa-large 기반 top-k classifier**를 구축해 관련 성취기준 후보를 우선 검색하는 2-step 파이프라인 설계
-- LLM 입력 구조와 few-shot 설정을 비교하며 **교육 도메인 분류 성능과 효율성**을 분석
+- LLM 모델(Llama, Qwen, gpt)과 모델의 크기, few-shot 설정을 바꾸어가며 **교육 도메인 분류 성능과 효율성**을 분석
 
 ### '딥러닝의 기초' 과목 프로젝트 (ARC-AGI Challenge)
 
@@ -129,8 +129,8 @@ layout: resume
   <div class="skill-category">
     <span class="skill-label">프로그래밍</span>
     <div class="skill-tags">
-      <span class="skill-tag">C/C++</span>
       <span class="skill-tag">Python</span>
+      <span class="skill-tag">C/C++</span>
     </div>
   </div>
   
