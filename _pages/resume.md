@@ -1,5 +1,5 @@
 ---
-title: "김진수 | 포트폴리오"
+title: "박정민 | 포트폴리오"
 permalink: /resume/
 layout: resume
 ---
